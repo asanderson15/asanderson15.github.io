@@ -15,7 +15,7 @@ comments: true
 
 <br>
 
-***The full GitHub repository for this tutorial is available [here]()***
+***The full GitHub repository for this tutorial is available [here](https://github.com/asanderson15/rails-angular-tutorial)***
 
 
 ### Introduction
