@@ -4,7 +4,7 @@ title: Bootstrapping an AngularJS app in Rails 4.0 - Part 1
 category: posts
 summary: I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading Rework, by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, I am by no means an expert on either.  So no matter how simple I keep this project, I will inevitably be learning as I go.  It seemed like the perfect opportunity to develop not only my blog, but also some content. 
 socialsummary: Part one of this tutorial covers creating a Rails 4.0 app, adding AngularJS, setting up structure, and implementing basic Rails and AngularJS controllers.
-socialimage: http://asanderson15.github.io/images/AngularJS-Shield-large.png
+socialimage: http://asanderson.org/images/AngularJS-Shield-large.png
 tags: AngularJS Rails Tutorial
 year: 2013
 month: 6
@@ -565,7 +565,7 @@ That's it for Part 1.  We now have a functioning Rails app with some basic Angul
   var disqus_shortname = 'adamandersonblog';
   var disqus_identifier = '2013-06-03-bootstrapping-angular-rails-part-1';
   var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 1';
-  var disqus_url = 'http://asanderson15.github.io/posts/2013/06/03/bootstrapping-angular-rails-part-1.html';
+  var disqus_url = 'http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
@@ -582,7 +582,7 @@ That's it for Part 1.  We now have a functioning Rails app with some basic Angul
   var disqus_shortname = 'adamandersonblog'; // required: replace example with your forum shortname
   var disqus_identifier = '2013-06-03-bootstrapping-angular-rails-part-1';
   var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 1';
-  var disqus_url = 'http://asanderson15.github.io/posts/2013/06/03/bootstrapping-angular-rails-part-1.html';
+  var disqus_url = 'http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function () {
