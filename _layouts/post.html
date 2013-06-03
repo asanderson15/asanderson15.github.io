@@ -4,9 +4,22 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Adam Anderson :: Web Development Blog" />
+    <meta name="Description" content="Author: Adam Anderson, Category: {{page.tags}}">
 
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css"> -->
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="{{page.title}}"/>
+    <meta property="og:image" content="{{page.socialimage}}"/>
+    <meta property="og:site_name" content="Adam Anderson :: Blog"/>
+    <meta property="og:description" content="{{page.socialsummary}}"/>
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@asandersn">
+    <meta name="twitter:creator" content="@asandersn">
+    <meta name="twitter:title" content="{{page.title}}">
+    <meta name="twitter:description" content="{{page.socialsummary}}">
+    <meta name="twitter:image" content="{{page.socialimage}}">
+
     <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/flat-ui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/posts.css">
@@ -54,15 +67,17 @@
     <div class="container">
       <!-- <section id="main_content" class="inner"> -->
       <h2>{{page.title}}</h2><br>
-      <a href="#fakelink" class="btn btn-small btn-social-twitter">
+      <a href="http://twitter.com/share?via=asandersn&text={{page.title}}&url=http://asanderson15.github.io{{page.url}}" class="btn btn-small btn-social-twitter">
         <i class="fui-twitter"></i> Tweet
       </a>
-      <a href="#fakelink" class="btn btn-small btn-social-facebook">
+      <a href="http://www.facebook.com/sharer.php?u=http://asanderson15.github.io{{page.url}}" class="btn btn-small btn-social-facebook">
         <i class="fui-facebook"></i> Like
       </a>
-      <a href="#fakelink" class="btn btn-small btn-social-googleplus">
-        <i class="fui-googleplus"></i> +1
-      </a><br><br>
+      <a href="https://plus.google.com/share?url=http://asanderson15.github.io{{page.url}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn btn-small btn-social-googleplus">
+        <i class="fui-googleplus"></i> Share
+      </a>
+      <br><br>
+      <p><em>By Adam Anderson</em></p>
       {{content}}
       <!-- </section> -->
     </div>
@@ -78,7 +93,7 @@
 
             <div class="span8">
               <ul class="bottom-links">
-                <li>Maintained by <a href="https://github.com/asanderson15">asanderson15</a>. Published with <a href="http://pages.github.com">GitHub Pages</a>.</li>
+                <li>Maintained by <a href="https://github.com/asanderson15">asanderson15</a>. Written by <a href="https://plus.google.com/105288089000467154668?rel=author">Adam Anderson</a>. Published with <a href="http://pages.github.com">GitHub Pages</a>.</li>
               </ul>
             </div>
 

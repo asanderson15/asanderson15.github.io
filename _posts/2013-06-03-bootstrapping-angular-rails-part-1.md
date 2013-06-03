@@ -2,7 +2,10 @@
 layout: post
 title: Bootstrapping an AngularJS app in Rails 4.0 - Part 1
 category: posts
-tags: AngularJS
+summary: I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading Rework, by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, I am by no means an expert on either.  So no matter how simple I keep this project, I will inevitably be learning as I go.  It seemed like the perfect opportunity to develop not only my blog, but also some content. 
+socialsummary: Part one of this tutorial covers creating a Rails 4.0 app, adding AngularJS, setting up structure, and implementing basic Rails and AngularJS controllers.
+socialimage: http://asanderson15.github.io/images/AngularJS-Shield-medium.png
+tags: AngularJS Rails Tutorial
 year: 2013
 month: 6
 day: 3
