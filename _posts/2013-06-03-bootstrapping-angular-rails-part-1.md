@@ -29,6 +29,13 @@ I plan to focus these posts on:
 
 The scope of this exploration may expand as I go, but this is my current plan.  
 
+In this post, I will cover:
+
+* Creating a Rails 4.0 app
+* Adding AngularJS
+* Setting up the file structure for managing JS controllers, and 
+* Implementing basic Rails and AngularJS controllers.
+
 This series assumes a certain basic understanding of both Rails and AngularJS.  If you need an introduction to Rails, I recommend checking out the excellent [Ruby on Rails Tutorial](http://ruby.railstutorial.org/) by Michael Hartl.  For an intro to AngularJS, I recommend checking out the [homepage tutorials](http://angularjs.org/) and, to go a bit deeper, the excellent [egghead.io tutorial videos](http://egghead.io/) by John Lindquist.
 
 So here we are.  Let's see where this takes us.<br><br>
