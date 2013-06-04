@@ -2,7 +2,7 @@
 layout: post
 title: Bootstrapping an AngularJS app in Rails 4.0 - Part 1
 category: posts
-summary: I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading Rework, by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, I am by no means an expert on either.  So no matter how simple I keep this project, I will inevitably be learning as I go.  It seemed like the perfect opportunity to develop not only my blog, but also some content. 
+summary: Part one of this tutorial covers creating a Rails 4.0 app, adding AngularJS, setting up structure, and implementing basic Rails and AngularJS controllers.
 socialsummary: Part one of this tutorial covers creating a Rails 4.0 app, adding AngularJS, setting up structure, and implementing basic Rails and AngularJS controllers.
 socialimage: http://asanderson.org/images/AngularJS-Shield-large.png
 tags: AngularJS Rails Tutorial
@@ -20,7 +20,7 @@ comments: true
 
 ### Introduction
 
-I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745), by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, I am by no means an expert on either.  So no matter how simple I keep this project, I will inevitably be learning as I go.  It seemed like the perfect opportunity to develop not only my blog, but also some content. 
+I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745), by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, there is never a shortage of new things to learn.  No matter how simple I keep this project, I will inevitably be learning as I go, so it seemed like the perfect opportunity to develop not only my new blog, but also some content. 
 
 This series assumes a certain basic understanding of both Rails and AngularJS.  If you need an introduction to Rails, I recommend checking out the excellent [Ruby on Rails Tutorial](http://ruby.railstutorial.org/) by Michael Hartl.  For an intro to AngularJS, I recommend checking out the [homepage tutorials](http://angularjs.org/) and, to go a bit deeper, the excellent [egghead.io tutorial videos](http://egghead.io/) by John Lindquist.
 
