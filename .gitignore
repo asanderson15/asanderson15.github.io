@@ -1,2 +1,4 @@
 _site/
 _unpublished_posts/
+*.sublime-project
+*.sublime-workspace

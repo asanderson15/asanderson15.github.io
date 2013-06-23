@@ -1,4 +1,4 @@
-asanderson15.github.io
+asanderson.org
 ======================
 
 Jekyll blog

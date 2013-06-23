@@ -44,6 +44,8 @@ So here we are.  Let's see where this takes us.<br><br>
 
 Let's start by creating a Rails 4.0 application.  (If you need help installing Ruby 2.0 or Rails 4.0 RC2, check out the ["Up and Running"](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book?version=4.0#sec-up_and_running) section of Michael Hartl's Ruby on Rails Tutorial.)  
 
+<!--- more -->
+
 To create the app, go to the command line terminal and create a new application called `blog`.  Use the below flags to skip the default test framework and set the database to be PostgreSQL.
 
 **Create new Rails blog application**
