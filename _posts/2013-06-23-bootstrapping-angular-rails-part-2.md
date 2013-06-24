@@ -12,14 +12,10 @@ day: 23
 published: true
 comments: true
 ---
-
-
-<br>
-
 ***The full GitHub repository for this tutorial is available [here](https://github.com/asanderson15/rails-angular-tutorial)***
 
 
-### Introduction
+## Introduction
 
 This is part two of my tutorial covering building an Angular and Rails blog application from scratch.  Jumping off right from where the [last part](http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html) left off, in this post, I will cover:
 
@@ -29,10 +25,10 @@ This is part two of my tutorial covering building an Angular and Rails blog appl
 
 As before, this series assumes a certain basic understanding of both Rails and AngularJS.  If you need an introduction to Rails, I recommend checking out the excellent [Ruby on Rails Tutorial](http://ruby.railstutorial.org/) by Michael Hartl.  For an intro to AngularJS, I recommend checking out the [homepage tutorials](http://angularjs.org/) and, to go a bit deeper, the excellent [egghead.io tutorial videos](http://egghead.io/) by John Lindquist.
 
-<br><br>
+<br>
 
 
-### Angular modules
+## Angular modules
 
 The first thing we will do is create a module for our application.  This module will allow us to leverage the `ng-app` directive to specify the main application module.  Since this will be the master Angular module for the `Main` Rails controller, we will declare it up front in our main.js.coffee file:
 
@@ -83,9 +79,9 @@ Even with this addition, not much has changed.  The application is still declari
 
 <br>
 
-### Implementing routing
+## Implementing routing
 
-#### Rails route
+### Rails route
 
 Before getting into setting up Angular routes, let's first change our main controller to be the root page when users visit our site.  To do this, change the routes config file in Rails like so:
 
@@ -102,7 +98,7 @@ end
 Now, if you visit [http://localhost:3000/](http://localhost:3000/), you should see the index action on the Main controller.  With this change, we are now ready to set up Angular routing.
 
 
-#### Angular routes
+### Angular routes
 
 Setting up routing in Angular requires configuring your new `Blog` module's routeProvider.  This is done by calling the `when` and `otherwise` functions on $routeProvider as part of the module's configuration.  
 
@@ -135,7 +131,7 @@ Once we complete our set up below, the default route when you visit [http://loca
 
 <br>
 
-#### View Controllers
+### View Controllers
 
 When first loading a page, the `Blog` Angular module we just created will look to its routeProvider to determine the view template and controller based on the URL.  Once it has that information, the chosen controller becomes the main `ng-controller` for the page.  In other words, we no longer need to specify `ng-controller` in a `<div>` element like we do now.  Rather, the `Blog` module specified in the `ng-app` directive acts to specify the controller itself.  
 
@@ -143,7 +139,7 @@ But what part of the page is controlled by this module-specified `ng-controller`
 
 <br>
 
-#### View Templates
+### View Templates
 
 So what is the view template?  A view template is just a partial view consisting of ordinary HTML.  It is similar to an HTML template in Rails, just without the ERB syntax.  In that same vein, the `ng-view` attribute is somewhat analogous to a `<%= yield %>` call.
 
@@ -196,7 +192,7 @@ This may seem a bit complicated at first, but it gets significantly easier after
 
 <br>
 
-### Setting up multiple AngularJS controllers and templates
+## Setting up multiple AngularJS controllers and templates
 
 Now that we have modularized our AngularJS application, let's implement our second route, **/post**.  Eventually, we will link the title of each post to an individual post page.  But for now, there will only be a single static post page.  We will get into making it dynamic with a shared model in the next few posts.
 
@@ -304,7 +300,7 @@ That's more like it.
 
 <br>
 
-### Route parameters
+## Route parameters
 
 Let's touch on one more key feature of Angular routing before wrapping up: route parameters.  This allows you to handle common RESTful URLs like `/users/123` and `/users/123/photos/5`.  The syntax for adding in these parameters is simple.  For the preceding examples, they would have been `/users/:userId` and `/users/:userId/photos/:photoId`.  Let's create a post id parameter and display the post id number in the title on the post page.
 
@@ -378,7 +374,7 @@ The $index parameter gives you the index of the current item in the `ng-repeat` 
 
 In a real world context, we would replace the $index parameter with the post's name, id, or other unique identifier.  This allows us to put in place a permalink structure, at least once we enable HTML5 pushState.
 
-### Conclusion
+## Conclusion
 
 So that's Part 2.  We now have a Rails app with a single Rails controller combined with an Angular module, routing, and 2 controllers and views.  In the next part, we will dive into building a simple Rails API to serve blog post data to our main controller.  From there, we will set up our own custom Angular shared service module to access and cache this data client-side.
 

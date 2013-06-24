@@ -12,13 +12,9 @@ day: 3
 published: true
 comments: true
 ---
-
-<br>
-
 ***The full GitHub repository for this tutorial is available [here](https://github.com/asanderson15/rails-angular-tutorial)***
 
-
-### Introduction
+## Introduction
 
 I was in the process of building a blog for myself as an exercise to try out Rails 4.0.  At the same time, I happened to be reading [Rework](http://www.amazon.com/Rework-Jason-Fried/dp/0307463745), by Jason Fried and David Heinemeier Hansson.  One of my favorite pieces of advice they gave was to focus not only on the main task of what you are doing, but also to recognize the byproducts.  While I have a fair amount of experience with Rails and AngularJS, there is never a shortage of new things to learn.  No matter how simple I keep this project, I will inevitably be learning as I go, so it seemed like the perfect opportunity to develop not only my new blog, but also some content. 
 
@@ -38,9 +34,11 @@ In this post, I will cover:
 
 This series assumes a certain basic understanding of both Rails and AngularJS.  If you need an introduction to Rails, I recommend checking out the excellent [Ruby on Rails Tutorial](http://ruby.railstutorial.org/) by Michael Hartl.  For an intro to AngularJS, I recommend checking out the [homepage tutorials](http://angularjs.org/) and, to go a bit deeper, the excellent [egghead.io tutorial videos](http://egghead.io/) by John Lindquist.
 
-So here we are.  Let's see where this takes us.<br><br>
+So here we are.  Let's see where this takes us.
 
-### Creating your Rails 4.0 app
+<br>
+
+## Creating your Rails 4.0 app
 
 Let's start by creating a Rails 4.0 application.  (If you need help installing Ruby 2.0 or Rails 4.0 RC2, check out the ["Up and Running"](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book?version=4.0#sec-up_and_running) section of Michael Hartl's Ruby on Rails Tutorial.)  
 
@@ -241,13 +239,13 @@ blog $
 
 <br>
 
-### Adding AngularJS to the app
+## Adding AngularJS to the app
 
 Now that we have our Rails app set up, it is time to add the AngularJS framework.  Before adding it to our project, though, it is worth disabling Turbolinks since much of the functionality is duplicated within AngularJS.  Although it is possible to run Turbolinks in parallel with Angular (see [here](http://stackoverflow.com/questions/14797935/using-angularjs-with-turbolinks)), in my experience it is more work than it is worth.
 
 <br>
 
-##### Disable Turbolinks
+### Disable Turbolinks
 
 First, go into your app/assets/javascripts/application.js file and remove the `//= require turbolinks` line from the file.  This will stop including turbolinks.js in each of your webpages.
 
@@ -267,13 +265,13 @@ Next, go to **app/views/layouts/application.html.erb** and remove `"data-turboli
 
 <br>
 
-##### Download AngularJS and copy into the project
+### Download AngularJS and copy into the project
 
 Download the the latest stable version of AngularJS (at the time of writing 1.0.6) from the [AngularJS site](http://angularjs.org/), selecting the stable branch and the zip build (which includes both uncompressed and minified assets).  Unzip the files and add all of the JS files to your `vendor/assets/javascripts` directory.
 
 <br>
 
-##### Add AngularJS as a dependency in application.js
+### Add AngularJS as a dependency in application.js
 
 Now add a Sprockets require statement in your **app/assets/javascripts/application.js** file:
 
@@ -297,7 +295,7 @@ Note that we have also removed the `require_tree` statement, which would have ha
 
 <br>
 
-### Creating your first Rails controller
+## Creating your first Rails controller
 
 Let's generate our first Rails controller.  This will be the main homepage controller and we will call it `Main`.
 
@@ -344,7 +342,7 @@ To test if this is working, return to the console and type `rails s` to relaunch
 
 <br>
 
-### Angular asset structure and Sprockets setup
+## Angular asset structure and Sprockets setup
 
 While you could work out of a single file, as your project grows beyond a single controller, it quickly becomes more and more difficult to maintain and track.  There are lots of opinions on the best way to track modules in an Angular project, but this is what works for me.  Create the following folders in the **app/assets/javascripts** directory:
 
@@ -397,7 +395,7 @@ The one thing this structure leaves out is templates. I generally create a singl
 
 <br>
 
-### Setting up an AngularJS module, router, and initial controller
+## Setting up an AngularJS module, router, and initial controller
 
 Now let's build our first AngularJS page to test whether all of this structure we just created is working properly.  Start by creating an extremely simple Angular controller called `IndexCtrl`.
 
@@ -560,7 +558,7 @@ After that, if you reload the page, you should see something that looks like thi
 
 <br>
 
-###Conclusion
+## Conclusion
 
 That's it for Part 1.  We now have a functioning Rails app with some basic AngularJS functionality.  But this is only the basic groundwork.  In the next part, we will dive into building a more complete Angular module structure for the app with support for routing, templates, multiple controllers, and data sharing between controllers.
 

@@ -21,9 +21,16 @@
     <meta name="twitter:description" content="{{page.socialsummary}}"/>
     <meta name="twitter:image" content="{{page.socialimage}}"/>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/bootstrap.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/flat-ui.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/posts.css">
+    <!-- ADOBE TYPEKIT -->
+    <script type="text/javascript" src="//use.typekit.net/llv3mka.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/post.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/flat-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/posts.css"> -->
 
     <title>Adam Anderson :: Blog :: {{page.title}}</title>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -50,64 +57,44 @@
     </div> -->
 
     <!-- HEADER -->
-    <div class="row">
-      <div class="navbar navbar-fixed-top navbar-inverse">
-        <div class="navbar-inner">
-          <a class="brand" href="http://asanderson.org/">Adam Anderson</a>
-          <ul class="nav pull-right">
-            <li><a href="https://github.com/asanderson15/">Github</a></li>
-          </ul>
-        </div>
-      </div>
+    <div class="post-navbar">
+      <a id="post-brand-white" class="post-brand" href="http://asanderson.org/">Adam Anderson</a>
+<!--       <ul class="post-nav-pull-right">
+        <li><a id="nav-home-link" href="http://asanderson.org">Home</a></li>
+      </ul> -->
     </div>
 
-    <div style="height:100px"></div>
+    <!-- <div style="height:80px"></div> -->
 
 
     <!-- MAIN CONTENT -->
-    <div class="container">
+    <div class="post-container">
       <!-- <section id="main_content" class="inner"> -->
-      <h2>{{page.title}}</h2><br>
-      <a href="http://twitter.com/share?via=asandersn&text={{page.title}}&url=http://asanderson.org{{page.url}}" class="btn btn-small btn-social-twitter">
-        <i class="fui-twitter"></i> Tweet
-      </a>
-      <a href="http://www.facebook.com/sharer.php?u=http://asanderson.org{{page.url}}" class="btn btn-small btn-social-facebook">
-        <i class="fui-facebook"></i> Like
-      </a>
-      <a href="https://plus.google.com/share?url=http://asanderson.org{{page.url}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn btn-small btn-social-googleplus">
-        <i class="fui-googleplus"></i> Share
-      </a>
-      <br><br>
-      <p><em>By Adam Anderson</em></p>
+      <div class="post-page-header">
+        <h1 class="post-title">{{page.title}}</h1><br>
+        <p><em>By Adam Anderson</em></p>
+        <br><br>
+        <a href="http://twitter.com/share?via=asandersn&text={{page.title}}&url=http://asanderson.org{{page.url}}" class="post-share-btn">
+          <i class="fui-twitter"></i> Tweet
+        </a>
+        <a href="http://www.facebook.com/sharer.php?u=http://asanderson.org{{page.url}}" class="post-share-btn">
+          <i class="fui-facebook"></i> Like
+        </a>
+        <a href="https://plus.google.com/share?url=http://asanderson.org{{page.url}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="post-share-btn">
+          <i class="fui-googleplus"></i> Share
+        </a>
+      </div>
+      <!-- <hr> -->
       {{content}}
       <!-- </section> -->
-    </div>
-
-    <!-- FOOTER  -->
-    <div class="mtl pbl">
-      <div class="bottom-menu bottom-menu-inverse">
-        <div class="container">
-          <div class="row">
-            <div class="span2 brand">
-              <a href="#fakelink"><i class="icon-off"></i></a>
-            </div>
-
-            <div class="span8">
-              <ul class="bottom-links">
-                <li>Maintained by <a href="https://github.com/asanderson15">asanderson15</a>. Written by <a href="https://plus.google.com/105288089000467154668?rel=author">Adam Anderson</a>. Published with <a href="http://pages.github.com">GitHub Pages</a>.</li>
-              </ul>
-            </div>
-
-            <div class="span2">
-              <ul class="bottom-icons">
-                <li><a href="http://linkedin.com/in/asanderson15/" class="fui-linkedin"></a></li>
-                <li><a href="http://twitter.com/asandersn" class="fui-twitter"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      
+      <!-- FOOTER  -->
+      <div class="post-footer">
+        Written by <a href="https://plus.google.com/105288089000467154668?rel=author">Adam Anderson</a>. Published with <a href="http://pages.github.com">GitHub Pages</a>.
       </div>
+
     </div>
+
 
     <!-- GOOGLE ANALYTICS -->
     <script>
@@ -120,6 +107,7 @@
       ga('send', 'pageview');
 
     </script>
+
 
   </body>
 </html>

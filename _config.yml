@@ -1,4 +1,5 @@
 markdown: redcarpet
 pygments: true
 auto: false
+safe: false
 excerpt_separator: "<!--- more -->"
