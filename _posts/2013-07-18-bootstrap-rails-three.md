@@ -65,9 +65,9 @@ I hope this is useful for other developers trying to experiment with the new Boo
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'adamandersonblog';
-  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
-  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
-  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+  var disqus_identifier = '2013-07-18-bootstrap-rails-three';
+  var disqus_title = 'Adding Bootstrap 3.0.0 WIP to your Rails app';
+  var disqus_url = 'http://asanderson.org/posts/2013/07/18/bootstrap-rails-three.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
@@ -82,9 +82,9 @@ I hope this is useful for other developers trying to experiment with the new Boo
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'adamandersonblog'; // required: replace example with your forum shortname
-  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
-  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
-  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+  var disqus_identifier = '2013-07-18-bootstrap-rails-three';
+  var disqus_title = 'Adding Bootstrap 3.0.0 WIP to your Rails app';
+  var disqus_url = 'http://asanderson.org/posts/2013/07/18/bootstrap-rails-three.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function () {
