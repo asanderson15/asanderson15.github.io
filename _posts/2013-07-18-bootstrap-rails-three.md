@@ -21,7 +21,7 @@ Version 3.0.0 of Bootstrap contains some really powerful new capabilities, as we
 
 Installation is simple.  Just add this line to your application's Gemfile:
 
-```rails
+```ruby
     gem 'bootstrap-rails-three', :github => 'asanderson15/bootstrap-rails-three', :branch => 'master'
 ```
 
@@ -55,3 +55,38 @@ Once the gem is installed, add the following code to your *application.css* and 
 
 I hope this is useful for other developers trying to experiment with the new Bootstrap 3.0.0.  If you have any comments or questions, don't hesitate to contact me on [Twitter](http://twitter.com/asandersn/).
 
+<br><br>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'adamandersonblog';
+  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
+  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
+  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'adamandersonblog'; // required: replace example with your forum shortname
+  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
+  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
+  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
