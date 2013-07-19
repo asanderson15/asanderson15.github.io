@@ -39,6 +39,8 @@ Or install it yourself as:
     $ gem install bootstrap-rails-three
 ```
 
+## Usage
+
 Once the gem is installed, add the following code to your *application.css* and *application.js* files:
 
 **app/assets/javascripts/application.js**
@@ -53,9 +55,9 @@ Once the gem is installed, add the following code to your *application.css* and 
 *= require twitter/bootstrap
 ```
 
-## Conclusion
+## Is this useful for you?
 
-I hope this is useful for other developers trying to experiment with the new Bootstrap 3.0.0.  If you have any comments or questions, don't hesitate to contact me on [Twitter](http://twitter.com/asandersn/).
+I hope this is useful for other developers trying to experiment with the new Bootstrap 3.0.0.  If you have any comments or questions, don't hesitate to contact me on [Twitter](http://twitter.com/asandersn/). If people show a lot of interest, I will try to be more diligent about keeping it up to date with the latest updates to Bootstrap as it continues towards a release version.
 
 <br><br>
 
