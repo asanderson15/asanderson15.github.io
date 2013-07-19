@@ -21,6 +21,8 @@ Version 3.0.0 of Bootstrap contains some really powerful new capabilities, as we
 
 Installation is simple.  Just add this line to your application's Gemfile:
 
+<!--- more -->
+
 ```ruby
     gem 'bootstrap-rails-three', :github => 'asanderson15/bootstrap-rails-three', :branch => 'master'
 ```
