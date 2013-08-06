@@ -45,7 +45,7 @@ As you can see, Rails generates our first database migration.  If you open that 
 
 **db/migrate/[date-time-created]_create_posts.rb**
 
-```rails
+```ruby
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
@@ -62,11 +62,13 @@ end
 
 <br>
 
+<!--- more -->
+
 Rails also created a file containing the Post model itself, though as you can see, there is no specific functionality or validation defined as of yet.  We will come back to implement this later.
 
 **app/models/post.rb**
 
-```rails
+```ruby
 class Post < ActiveRecord::Base
 
 end
@@ -150,14 +152,116 @@ $
 
 As you can see, we manually created two sample blog entries and saved them to the database.  The next step is to build an API so our client app can access them.
 
+<br>
 
 ## Creating a Rail API controller
 
+Similar to how we created our model, we can use Rails to generate a barebones controller for our API with the `generate` command.
 
+```bash
+$ rails generate controller posts
+      create  app/controllers/posts_controller.rb
+      invoke  erb
+      create    app/views/posts
+      invoke  helper
+      create    app/helpers/posts_helper.rb
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/posts.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/posts.css.scss
+```
 
-## Exposing CRUD API functionality
+<br>
 
+As you can see, this generated a number of files and directories.  The only one we really need is `posts_controller.rb`, so we will delete `app/views/posts`, `posts_helper.rb`, `posts.js.coffee`, and `posts.css.scss`.  Let's take a look at our newly created PostsController.
 
+**app/controllers/posts_controller.rb**
+
+```ruby
+class PostsController < ApplicationController
+
+end
+```
+
+<br>
+
+As you can see, not much there.  Before creating our API actions, let's add a routes for our API in our route config file.  This is as simple as adding the single line `resources :posts` to the file.
+
+**config/routes.rb**
+
+```ruby
+Blog::Application.routes.draw do
+  root to: 'main#index'
+
+  resources :posts
+
+end
+```
+
+<br>
+
+Then, use the `rake routes` command at the command line to see the new routes we have created.
+
+```bash
+$ rake routes
+   Prefix Verb   URI Pattern               Controller#Action
+     root GET    /                         main#index
+    posts GET    /posts(.:format)          posts#index
+          POST   /posts(.:format)          posts#create
+ new_post GET    /posts/new(.:format)      posts#new
+edit_post GET    /posts/:id/edit(.:format) posts#edit
+     post GET    /posts/:id(.:format)      posts#show
+          PATCH  /posts/:id(.:format)      posts#update
+          PUT    /posts/:id(.:format)      posts#update
+          DELETE /posts/:id(.:format)      posts#destroy
+```
+
+<br>
+
+Rails makes it simple to create all of these API actions with a single line.  Pretty awesome.
+
+Let's start with implementing a single API action&mdash;the `index` action&mdash;which for now we will allow to return all post data.  This is obviously not a good long-term solution, but will be fine for now.  We will respond to all API requests with JSON, which can be easily parsed by our Angular controller.
+
+**app/controllers/posts_controller.rb**
+
+```ruby
+class PostsController < ApplicationController
+  respond_to :json
+
+  def index
+
+    # Gather all post data
+    posts = Post.all
+
+    # Respond to request with post data in json format
+    respond_with(posts) do |format|
+      format.json { render :json => posts.as_json }
+    end
+
+  end
+
+end
+```
+
+<br>
+
+This implementation is fairly straightforward.  First, we configure the controller to respond to JSON requests for all actions.  Next, we define our `index` action to pull all post data from our model, reformat that data as JSON, and then respond to the request with it.
+
+Now let's test whether this is working properly.  Open up two command line windows.  In the first, use the `rails s` command to launch the Rails server.  Then, in the second window, run the following `curl` command on the API:
+
+```bash
+$ curl http://localhost:3000/posts.json
+
+[{"id":1,"title":"The first post on the database","contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet lobortis vulputate. Ut tempus, orci eu tempor sagittis, mauris orci ultrices arcu, in volutpat elit elit semper turpis. Maecenas id lorem quis magna lacinia tincidunt. In libero magna, pharetra in hendrerit vitae, luctus ac sem. Nulla velit augue, vestibulum a egestas et, imperdiet a lacus. Nam mi est, vulputate eu sollicitudin sed, convallis vel turpis. Cras interdum egestas turpis, ut vestibulum est placerat a. Proin quam tellus, cursus et aliquet ut, adipiscing id lacus. Aenean iaculis nulla justo.","author":"Foo","post_date":"2013-08-03T20:50:26.000Z","created_at":"2013-08-03T20:50:38.811Z","updated_at":"2013-08-03T20:50:38.811Z"},{"id":2,"title":null,"contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo sem, imperdiet in faucibus et, feugiat ultricies tellus. Vivamus pellentesque iaculis dolor, sed pellentesque est dignissim vitae. Donec euismod purus non metus condimentum porttitor suscipit nibh tempor. Etiam malesuada elit in lectus pharetra facilisis. Fusce at nisl augue. Donec at est felis. Sed a gravida diam. Nunc nunc mi, egestas non dignissim et, porta aliquam ante.","author":"Authorman","post_date":"2013-07-27T20:54:16.000Z","created_at":"2013-08-03T20:54:19.243Z","updated_at":"2013-08-03T20:54:19.243Z"}]%
+
+```
+
+<br>
+
+You should see a response like this, with the sample data we created in the console being returned in JSON format.  While we will eventually build this Rails API out further to handle the full CRUD implementation, let's stop here for now and turn to our client to ingest this data dump.
+
+<br>
 
 ## Accessing the blog API from the AngularJS main controller
 
