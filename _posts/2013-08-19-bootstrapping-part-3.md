@@ -2,13 +2,13 @@
 layout: post
 title: Bootstrapping an AngularJS app in Rails 4.0 - Part 3
 category: posts
-summary: Part three of this tutorial focuses building a simple Rails API to serve blog post data to our main controller.
-socialsummary: Part two of this tutorial focuses on AngularJS, covering modularization, routing, templates, and multiple AngularJS controllers.
+summary: Part three of this tutorial focuses building a simple Rails API to serve blog post data to our main Angular controller.
+socialsummary: Part three of this tutorial focuses building a simple Rails API to serve blog post data to our main Angular controller.
 socialimage: http://asanderson.org/images/AngularJS-Shield-large.png
 tags: AngularJS Rails Tutorial
 year: 2013
 month: 8
-day: 3
+day: 19
 published: true
 comments: true
 ---
@@ -43,7 +43,7 @@ $ rails generate model Post title:string contents:text author:string post_date:d
 
 As you can see, Rails generates our first database migration.  If you open that migration up to inspect, it should look something like this.
 
-**db/migrate/[date-time-created]_create_posts.rb**
+**db/migrate/[date-time-created]\_create\_posts.rb**
 
 ```ruby
 class CreatePosts < ActiveRecord::Migration
@@ -97,7 +97,7 @@ $ rails c
 Loading development environment (Rails 4.0.0)
 
 2.0.0p0 :001 > ########  First, let's create a new post.  #########
-2.0.0p0 :002 > #########E##########################################
+2.0.0p0 :002 > ####################################################
 
 2.0.0p0 :003 > first_post = Post.new
  => #<Post id: nil, title: nil, contents: nil, author: nil, post_date: nil, created_at: nil, updated_at: nil>
@@ -174,7 +174,7 @@ $ rails generate controller posts
 
 <br>
 
-As you can see, this generated a number of files and directories.  The only one we really need is `posts_controller.rb`, so we will delete `app/views/posts`, `posts_helper.rb`, `posts.js.coffee`, and `posts.css.scss`.  Let's take a look at our newly created PostsController.
+As you can see, this generated a number of files and directories.  However, since we are not implementing any views as part of this API (we'll be responding with JSON instead), the only one we really need is `posts_controller.rb`.  To avoid confusion later, let's delete `app/views/posts`, `posts_helper.rb`, `posts.js.coffee`, and `posts.css.scss`.  Now let's take a look at our newly created PostsController.
 
 **app/controllers/posts_controller.rb**
 
@@ -246,14 +246,12 @@ end
 
 <br>
 
-This implementation is fairly straightforward.  First, we configure the controller to respond to JSON requests for all actions.  Next, we define our `index` action to pull all post data from our model, reformat that data as JSON, and then respond to the request with it.
-
-Now let's test whether this is working properly.  Open up two command line windows.  In the first, use the `rails s` command to launch the Rails server.  Then, in the second window, run the following `curl` command on the API:
+This implementation is fairly straightforward.  First, we configure the controller to respond to JSON requests for all actions.  Next, we define our `index` action to pull all post data from our model, reformat that data as JSON, and then respond to the request with it.  Now let's test whether this is working properly.  Open up two command line windows.  In the first, use the `rails s` command to launch the Rails server.  Then, in the second terminal window, run the following `curl` command on the API:
 
 ```bash
 $ curl http://localhost:3000/posts.json
 
-[{"id":1,"title":"The first post on the database","contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet lobortis vulputate. Ut tempus, orci eu tempor sagittis, mauris orci ultrices arcu, in volutpat elit elit semper turpis. Maecenas id lorem quis magna lacinia tincidunt. In libero magna, pharetra in hendrerit vitae, luctus ac sem. Nulla velit augue, vestibulum a egestas et, imperdiet a lacus. Nam mi est, vulputate eu sollicitudin sed, convallis vel turpis. Cras interdum egestas turpis, ut vestibulum est placerat a. Proin quam tellus, cursus et aliquet ut, adipiscing id lacus. Aenean iaculis nulla justo.","author":"Foo","post_date":"2013-08-03T20:50:26.000Z","created_at":"2013-08-03T20:50:38.811Z","updated_at":"2013-08-03T20:50:38.811Z"},{"id":2,"title":null,"contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo sem, imperdiet in faucibus et, feugiat ultricies tellus. Vivamus pellentesque iaculis dolor, sed pellentesque est dignissim vitae. Donec euismod purus non metus condimentum porttitor suscipit nibh tempor. Etiam malesuada elit in lectus pharetra facilisis. Fusce at nisl augue. Donec at est felis. Sed a gravida diam. Nunc nunc mi, egestas non dignissim et, porta aliquam ante.","author":"Authorman","post_date":"2013-07-27T20:54:16.000Z","created_at":"2013-08-03T20:54:19.243Z","updated_at":"2013-08-03T20:54:19.243Z"}]%
+[{"id":1,"title":"The first post on the database","contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet lobortis vulputate. Ut tempus, orci eu tempor sagittis, mauris orci ultrices arcu, in volutpat elit elit semper turpis. Maecenas id lorem quis magna lacinia tincidunt. In libero magna, pharetra in hendrerit vitae, luctus ac sem. Nulla velit augue, vestibulum a egestas et, imperdiet a lacus. Nam mi est, vulputate eu sollicitudin sed, convallis vel turpis. Cras interdum egestas turpis, ut vestibulum est placerat a. Proin quam tellus, cursus et aliquet ut, adipiscing id lacus. Aenean iaculis nulla justo.","author":"Foo","post_date":"2013-08-03T20:50:26.000Z","created_at":"2013-08-03T20:50:38.811Z","updated_at":"2013-08-03T20:50:38.811Z"},{"id":2,"title":"This is the second post","contents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo sem, imperdiet in faucibus et, feugiat ultricies tellus. Vivamus pellentesque iaculis dolor, sed pellentesque est dignissim vitae. Donec euismod purus non metus condimentum porttitor suscipit nibh tempor. Etiam malesuada elit in lectus pharetra facilisis. Fusce at nisl augue. Donec at est felis. Sed a gravida diam. Nunc nunc mi, egestas non dignissim et, porta aliquam ante.","author":"Authorman","post_date":"2013-07-27T20:54:16.000Z","created_at":"2013-08-03T20:54:19.243Z","updated_at":"2013-08-03T20:54:19.243Z"}]%
 
 ```
 
@@ -265,13 +263,93 @@ You should see a response like this, with the sample data we created in the cons
 
 ## Accessing the blog API from the AngularJS main controller
 
+Now let's turn back to our client main `IndexCtrl` controller.  Loading main page content asynchronously, in this case the posts themselves, poses a small presentation problem.  While that data is loading, the page will show up as blank.  This is not ideal, even if we are able to pull in the post data within a few hundred milliseconds.  To avoid that, let's start by replacing our sample content with a placeholder post entitled "Loading...".
 
+**app/assets/javascripts/Controllers/main/mainIndexCtrl.js.coffee**
+
+```coffeescript
+@IndexCtrl = ($scope, $location) ->
+
+  $scope.data = 
+    posts: [{title: 'Loading posts...', contents: ''}]
+
+  $scope.viewPost = (postId) ->
+    $location.url('/post/'+postId)
+
+```
+
+<br>
+
+If you load the page, you should see something like this.
+
+**http://localhost:3000**
+
+<img src="{{relative}}/images/bootstrapss3-1.jpg" class="img-polaroid">
+
+<br>
+
+This will let the user know to hold on for just a sec while the content loads rather than displaying him or her a blank page initially.  Angular provides some more elegant ways to handle this problem that I will touch on in another post. 
+
+Now let's set up a function to load the blog posts when the controller first loads.  Here is the code to implement this GET request to the API.  I will walk through what is going on below.
+
+**app/assets/javascripts/Controllers/main/mainIndexCtrl.js.coffee**
+
+```coffeescript
+@IndexCtrl = ($scope, $location, $http) ->
+
+  $scope.data = 
+    posts: [{title: 'Loading posts...', contents: ''}]
+
+  loadPosts = ->
+    $http.get('./posts.json').success( (data) ->
+      $scope.data.posts = data
+      console.log('Successfully loaded posts.')
+    ).error( ->
+      console.error('Failed to load posts.')
+    )
+
+  loadPosts()
+
+  $scope.viewPost = (postId) ->
+    $location.url('/post/'+postId)
+
+```
+
+<br>
+
+Stepping through this, you see that we injected an additional Angular module into our controller, specifically `$http`.  This module neatly encapsulates all of the asynchronous HTTP functionality that we will need to interact with our API.
+
+Next, we have created a `loadPosts` function.  The first line uses `$http` to make a GET request to [http://localhost:3000/posts.json](http://localhost:3000/posts.json) to retrieve the JSON data we created earlier containing our initial sample posts.  This `$http.get()` call returns a request object.  Using JS dot notation, we then immediately create two callbacks: one for success and one for error.  In the case of success, our callback will take a `data` argument that represents the JSON data object returned from the API.  We set our `$scope.data.posts` object (which is bound to our HTML view) to contain that returned post data.  Then we call `console.log` to let ourselves know that our API call returned successfully and that our post data is loaded (this is obviously optional).  In the case of an error, we simply log an error to the console to let ourselves know that as well.
+
+Finally, we call `loadPosts()` from the main Index Controller.  This function will run when the controller is first created.
+
+So now when we load our page, the following will happen, starting from the time Angular loads on the client browser:
+
+- Angular routes the request to the `IndexCtrl` controller and renders the appropriate template in the `ng-view` directive in index.html.erb
+
+- The `IndexCtrl` controller initializes with the "Loading..." data. Because this data is bound to the view, this data immediately renders in the browser
+
+- At the same time, `IndexCtrl` calls the `loadPosts()` function, asynchronously requesting the post data stored in our Rails database from our API
+
+- As soon as Rails returns our posts data, the `success` callback is called. This callback replaces the temporary "Loading..." data with the real data from the server.
+
+- Since this data is bound to the view, it will immediately re-render in the browser with the real data
+
+If you reload the page now, it should look something like this.  You may or may not see the "Loading..." temporary data come up, depending on how fast your browser is and how quickly your Rails instance responds to the API call.
+
+**http://localhost:3000/**
+
+<img src="{{relative}}/images/bootstrapss3-2.jpg" class="img-polaroid">
+
+<br>
+
+And there it is.  The sample post data that we entered into our database from the Rails console is now being accessed by Angular via our Rails API and displayed on the client side in the browser!
 
 ## Conclusion
 
-That's it for part 3.  We now have a Rails app with that exposes an API for accessing and updating blog data.  That Rails backend connects to the client through the main AngularJS controller, which automagically displays the content.  In the next part, we will cover a more sophisticated way to use AngularJS to access the API, creating a shared service that can be accessed by any controller. 
+That's it for part 3.  We now have a Rails app that exposes an API for accessing and updating blog data.  That Rails backend connects to the client through the main AngularJS controller, which automagically displays the content.  While this is a good high-level demonstration, the structure iof pulling down data in a main controller is not a great or sustainable solution as your app grows.  So in the next part, we will cover a more sophisticated way to use AngularJS to access the API, creating a shared service that can be accessed by any controller. 
 
-***I am currently working on part 4, which will cover building a Rails API and connecting it to our AngularJS controllers.  [Stay tuned!](http://twitter.com/asandersn/)***
+***I am currently working on part 4, which will build out the API a little further and encapsulate client API calls in a single shared Angular Service.  [Stay tuned!](http://twitter.com/asandersn/)***
 
 <br><br>
 
@@ -279,9 +357,9 @@ That's it for part 3.  We now have a Rails app with that exposes an API for acce
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'adamandersonblog';
-  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
-  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
-  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+  var disqus_identifier = '2013-08-19-bootstrapping-angular-rails-part-3';
+  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 3';
+  var disqus_url = 'http://asanderson.org/posts/2013/08/19/bootstrapping-angular-rails-part-3.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
@@ -296,9 +374,9 @@ That's it for part 3.  We now have a Rails app with that exposes an API for acce
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'adamandersonblog'; // required: replace example with your forum shortname
-  var disqus_identifier = '2013-06-23-bootstrapping-angular-rails-part-2';
-  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 2';
-  var disqus_url = 'http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html';
+  var disqus_identifier = '2013-08-19-bootstrapping-angular-rails-part-3';
+  var disqus_title = 'Bootstrapping an AngularJS app in Rails 4.0 - Part 3';
+  var disqus_url = 'http://asanderson.org/posts/2013/08/19/bootstrapping-angular-rails-part-3.html';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function () {

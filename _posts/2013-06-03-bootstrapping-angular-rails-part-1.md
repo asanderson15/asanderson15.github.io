@@ -562,7 +562,7 @@ After that, if you reload the page, you should see something that looks like thi
 
 That's it for Part 1.  We now have a functioning Rails app with some basic AngularJS functionality.  But this is only the basic groundwork.  In the next part, we will dive into building a more complete Angular module structure for the app with support for routing, templates, multiple controllers, and data sharing between controllers.
 
-***I am currently working on part 2, which will begin to cover modularization, routing, templates, and multiple AngularJS controllers.  [Stay tuned!](http://twitter.com/asandersn/)***
+***Find this helpful? Check out [Part 2](http://asanderson.org/posts/2013/06/23/bootstrapping-angular-rails-part-2.html). And [follow me](http://twitter.com/asandersn/) on Twitter for more updates.***
 
 <br><br>
 

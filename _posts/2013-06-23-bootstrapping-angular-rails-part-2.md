@@ -378,7 +378,7 @@ In a real world context, we would replace the $index parameter with the post's n
 
 So that's Part 2.  We now have a Rails app with a single Rails controller combined with an Angular module, routing, and 2 controllers and views.  In the next part, we will dive into building a simple Rails API to serve blog post data to our main controller.  From there, we will set up our own custom Angular shared service module to access and cache this data client-side.
 
-***I am currently working on part 3, which will cover building a Rails API and connecting it to our AngularJS controllers.  [Stay tuned!](http://twitter.com/asandersn/)***
+***Find this helpful? Check out [Part 3](http://asanderson.org/posts/2013/08/19/bootstrapping-angular-rails-part-3.html). And [follow me](http://twitter.com/asandersn/) on Twitter for more updates.***
 
 <br><br>
 
