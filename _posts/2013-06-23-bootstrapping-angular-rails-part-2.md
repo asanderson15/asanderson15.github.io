@@ -272,7 +272,7 @@ What happened?  Well, the link we just created was an absolute route.  As Angula
 
 Then, we will add the function to our IndexCtrl controller:
 
-**app/assets/templates/Controllers/main/mainIndexCtrl.js.coffee**
+**app/assets/javascripts/Controllers/main/mainIndexCtrl.js.coffee**
 
 ```coffeescript
 @IndexCtrl = ($scope, $location) ->
@@ -374,6 +374,28 @@ We will then implement this in the view templates for these two pages:
 The $index parameter gives you the index of the current item in the `ng-repeat` iterator.  When you pass this parameter in, it is added to the URL by the call to $location.url.  That parameter is read by the PostCtrl controller through the $routeParams module and stored in the $scope.data hash.  From there, it is accessed by the view template and inserted into the page as text.
 
 In a real world context, we would replace the $index parameter with the post's name, id, or other unique identifier.  This allows us to put in place a permalink structure, at least once we enable HTML5 pushState.
+
+<br>
+
+## A note about deployment
+
+*(Updated 9/15/13)* While everything should work fine in development/test mode, before deploying Rails into production, we need modify the production environment configuration slightly to ensure that `main.js` and its dependencies get precompiled.  As you add more Rails controllers, you will also want to add their respective javascript files to this array as well.
+
+**config/environments/production.rb**
+
+```ruby
+Blog::Application.configure do
+  # ...
+
+  config.assets.precompile += %w( main.js )
+
+  # ...
+
+end
+```
+
+<br>
+
 
 ## Conclusion
 
