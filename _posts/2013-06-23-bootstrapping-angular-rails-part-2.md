@@ -368,6 +368,7 @@ We will then implement this in the view templates for these two pages:
     <p>{{ "{{ data.post.contents "}} }}</p>
 </div>
 ```
+
 <br>
 
 The $index parameter gives you the index of the current item in the `ng-repeat` iterator.  When you pass this parameter in, it is added to the URL by the call to $location.url.  That parameter is read by the PostCtrl controller through the $routeParams module and stored in the $scope.data hash.  From there, it is accessed by the view template and inserted into the page as text.

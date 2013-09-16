@@ -2,8 +2,8 @@
 layout: post
 title: Bootstrapping an AngularJS app in Rails 4.0 - Part 3
 category: posts
-summary: Part three of this tutorial focuses building a simple Rails API to serve blog post data to our main Angular controller.
-socialsummary: Part three of this tutorial focuses building a simple Rails API to serve blog post data to our main Angular controller.
+summary: Part three of this tutorial focuses on building a simple Rails API to serve blog post data to our main Angular controller.
+socialsummary: Part three of this tutorial focuses on building a simple Rails API to serve blog post data to our main Angular controller.
 socialimage: http://asanderson.org/images/AngularJS-Shield-large.png
 tags: AngularJS Rails Tutorial
 year: 2013
@@ -349,7 +349,7 @@ And there it is.  The sample post data that we entered into our database from th
 
 That's it for part 3.  We now have a Rails app that exposes an API for accessing and updating blog data.  That Rails backend connects to the client through the main AngularJS controller, which automagically displays the content.  While this is a good high-level demonstration, the structure iof pulling down data in a main controller is not a great or sustainable solution as your app grows.  So in the next part, we will cover a more sophisticated way to use AngularJS to access the API, creating a shared service that can be accessed by any controller. 
 
-***I am currently working on part 4, which will build out the API a little further and encapsulate client API calls in a single shared Angular Service.  [Stay tuned!](http://twitter.com/asandersn/)***
+***Find this helpful? Check out [Part 4](http://asanderson.org/posts/2013/09/15/bootstrapping-angular-rails-part-4.html). And [follow me](http://twitter.com/asandersn/) on Twitter for more updates.***
 
 <br><br>
 
