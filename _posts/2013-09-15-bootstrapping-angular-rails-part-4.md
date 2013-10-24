@@ -310,7 +310,7 @@ This additional line, which identifies the dependencies using strings that will 
 
 ## Conclusion
 
-That's it for part 4.  We now have a shared AngularJS service that allows us to display multiple pages without reloading data from the server.  This works well if the client only needs to read data from the server.  But things get more complicated when the client also has access to create, update, and destroy data on the server.  In the next part, we will build on this shared AngularJS server to add additional CRUD functionality and keep the client and server in sync. 
+That's it for part 4.  We now have a shared AngularJS service that allows us to display multiple pages without reloading data from the server.  This works well if the client only needs to read data from the server.  But things get more complicated when the client also has access to create, update, and destroy data on the server.  In the next part, we will build on this shared AngularJS service to add additional CRUD functionality and keep the client and server in sync. 
 
 ***I am currently working on part 5, which will add additional CRUD functionality and maintain synchronization between the AngularJS client and Rails server.  [Stay tuned!](http://twitter.com/asandersn/)***
 
