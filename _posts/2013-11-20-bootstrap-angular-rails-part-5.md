@@ -2,8 +2,8 @@
 layout: post
 title: Bootstrapping an AngularJS app in Rails 4.0 - Part 5
 category: posts
-summary: Part five of this tutorial covers creating posts from the client side and using promises to handle asynchronous data loading.
-socialsummary: Part five of this tutorial covers creating posts from the client side and using promises to handle asynchronous data loading.
+summary: Part five of this tutorial covers using Angular and Rails to create database records from the client side and using promises to handle asynchronous data loading.
+socialsummary: Part five of this tutorial covers using Angular and Rails to create database records from the client side and using promises to handle asynchronous data loading.
 socialimage: http://asanderson.org/images/AngularJS-Shield-large.png
 tags: AngularJS Rails Tutorial
 year: 2013
