@@ -280,7 +280,7 @@ Fortunately, the workaround for this is simple.  At the end of our controller fi
   $scope.viewPost = (postId) ->
     $location.url('/post/'+postId)
 
-@PostCtrl.$inject = ['$scope', '$location', '$http', 'postData']
+@IndexCtrl.$inject = ['$scope', '$location', '$http', 'postData']
 
 ```
 
@@ -312,7 +312,7 @@ This additional line, which identifies the dependencies using strings that will 
 
 That's it for part 4.  We now have a shared AngularJS service that allows us to display multiple pages without reloading data from the server.  This works well if the client only needs to read data from the server.  But things get more complicated when the client also has access to create, update, and destroy data on the server.  In the next part, we will build on this shared AngularJS service to add additional CRUD functionality and keep the client and server in sync. 
 
-***Find this helpful? Check out [Part 5](http://asanderson.org/posts/2013/11/20/bootstrapping-angular-rails-part-5.html). And [follow me](http://twitter.com/asandersn/) on Twitter for more updates.***
+***Find this helpful? Check out [Part 5](http://asanderson.org/posts/2013/11/20/bootstrap-angular-rails-part-5.html). And [follow me](http://twitter.com/asandersn/) on Twitter for more updates.***
 
 <br><br>
 

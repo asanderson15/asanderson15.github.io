@@ -216,7 +216,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
 
 As you can see, the template for the view is mainPost.html, while the controller is MainPostCtrl.  Let's set up a simple template and controller for this new view.
 
-**app/assets/javascripts/Controllers/main/**
+**app/assets/javascripts/Controllers/main/mainPostCtrl.js.coffee**
 
 ```coffeescript
 @PostCtrl = ($scope) ->

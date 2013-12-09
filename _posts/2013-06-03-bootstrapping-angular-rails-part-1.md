@@ -269,6 +269,8 @@ Next, go to **app/views/layouts/application.html.erb** and remove `"data-turboli
 
 Download the the latest stable version of AngularJS (at the time of writing 1.0.6) from the [AngularJS site](http://angularjs.org/), selecting the stable branch and the zip build (which includes both uncompressed and minified assets).  Unzip the files and add all of the JS files to your `vendor/assets/javascripts` directory.
 
+At the same time, download the latest stable version of Underscore.js from the [Underscore.js site](http://underscorejs.org/) and add the files to the `vendor/assets/javascripts` directory as well.  We will use this utility later.
+
 <br>
 
 ### Add AngularJS as a dependency in application.js

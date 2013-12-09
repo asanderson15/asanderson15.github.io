@@ -464,7 +464,7 @@ Next, let's update our `PostCtrl` controller:
 **app/assets/javascripts/Controllers/main/mainPostCtrl.js.coffee**
 
 ```coffeescript
-@PostCtrl = ($scope, $routeParams, postData) ->
+@PostCtrl = ($scope, $routeParams, $location, $postCtrl postData) ->
 
   $scope.data =
     postData: postData.data
@@ -489,7 +489,7 @@ Next, let's update our `PostCtrl` controller:
 
   $scope.prepPostData()
 
-@PostCtrl.$inject = ['$scope', '$routeParams', 'postData']
+@PostCtrl.$inject = ['$scope', '$routeParams', '$location', 'postData']
 ```
 
 <br>
@@ -574,7 +574,7 @@ Now we will update the `PostCtrl` controller to create a promise upon instantiat
 **app/assets/javascripts/Controllers/main/mainPostCtrl.js.coffee**
 
 ```coffeescript
-@PostCtrl = ($scope, $routeParams, $q, postData) ->
+@PostCtrl = ($scope, $routeParams, $location, $q, postData) ->
 
   $scope.data =
     postData: postData.data
@@ -605,7 +605,7 @@ Now we will update the `PostCtrl` controller to create a promise upon instantiat
   postData.loadPosts(@deferred)
 
 
-@PostCtrl.$inject = ['$scope', '$routeParams', '$q', 'postData']
+@PostCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'postData']
 ```
 
 <br>
