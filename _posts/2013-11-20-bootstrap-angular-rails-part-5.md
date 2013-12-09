@@ -77,7 +77,7 @@ Notice that we have added an `ng-click` directive to call `navNewPost()` upon cl
   $scope.navNewPost = ->
     $location.url('/post/new')
 
-@PostCtrl.$inject = ['$scope', '$location', '$http', 'postData']
+@IndexCtrl.$inject = ['$scope', '$location', '$http', 'postData']
 ```
 
 <br>
