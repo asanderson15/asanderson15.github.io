@@ -464,7 +464,7 @@ Next, let's update our `PostCtrl` controller:
 **app/assets/javascripts/Controllers/main/mainPostCtrl.js.coffee**
 
 ```coffeescript
-@PostCtrl = ($scope, $routeParams, $location, $postCtrl postData) ->
+@PostCtrl = ($scope, $routeParams, $location, postData) ->
 
   $scope.data =
     postData: postData.data
